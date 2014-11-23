@@ -1,0 +1,5 @@
+object HolaKAse {
+  def main(args: Array[String]) {
+    println("Hola k ase!")
+  }
+}
