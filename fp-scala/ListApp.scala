@@ -24,7 +24,13 @@ object ListApp extends App {
 
   println("x = " + x)
 
-  val ex34 = List.tail(List( 4,3,2, 1 ))
+  val ex32 = List.tail(List( 4,3,2, 1 ))
+  println( "ex32 = " + ex32 )
+
+  val ex33 = List.setHead(List( 4,3,2, 1 ),40)
+  println( "ex33 = " + ex33 )
+
+  val ex34 = List.drop(List( 4,3,2, 1 ), 3) // drops 3
   println( "ex34 = " + ex34 )
 
 }
