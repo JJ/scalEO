@@ -33,4 +33,10 @@ object ListApp extends App {
   val ex34 = List.drop(List( 4,3,2, 1 ), 3) // drops 3
   println( "ex34 = " + ex34 )
 
+  val biggerThan0 = ( a: Int )=> a > 0
+
+  val ex35 = List.dropWhile(List( 4,3,2, 1, -1 ), biggerThan0  ) // drops until -1
+  println( "ex35 = " + ex35 )
+
+
 }
