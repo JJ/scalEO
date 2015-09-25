@@ -88,7 +88,7 @@ object List { // `List` companion object. Contains functions for creating and wo
       else appendElement(x,firstN(xs, n-1))
   }
   
-  def init[A](l: List[A]): List[A]  = sys.error("todo")
+  def init[A](l: List[A]): List[A]  = firstN( l, length(l)-1)
 
   def foldLeft[A,B](l: List[A], z: B)(f: (B, A) => B): B = sys.error("todo")
 

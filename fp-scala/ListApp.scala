@@ -42,4 +42,6 @@ object ListApp extends App {
 
   val otroEx = List.firstN( List ( 1, 2, 3, 4 , 5, 6), 3 )
   println( "otroEx = " + otroEx )
+
+  println( "ex3.6" + List.init( otroEx ))
 }
