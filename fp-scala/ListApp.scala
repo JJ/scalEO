@@ -36,5 +36,7 @@ object ListApp extends App {
   val ex35 = List.dropWhile(List( 4,3,2, 1, -1 ),  ( a: Int )=> a > 0 ) // drops until -1
   println( "ex35 = " + ex35 )
 
-
+  val unEx = List.appendElement( 0, List ( 1, 2, 3, 4 , 5, 6) )
+  println( "unEx = " + unEx )
+  println( "Length unEx = " + List.length( unEx ) )
 }
