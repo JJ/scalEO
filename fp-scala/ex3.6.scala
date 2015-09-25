@@ -79,7 +79,16 @@ object List { // `List` companion object. Contains functions for creating and wo
     case Cons( x, xs ) => 1 + length(xs)
   }
 
-  def init[A](l: List[A]): List[A]  =  sys.error("todo") 
+  
+  def firstN[A](l: List[A], n: Int): List[A]  =  l match {
+    case Nil => Nil
+    case Cons(x, xs) => 
+      if (n > length(l)) l
+      else if ( n == 1 ) List(x)
+      else appendElement(x,firstN(xs, n-1))
+  }
+  
+  def init[A](l: List[A]): List[A]  = sys.error("todo")
 
   def foldLeft[A,B](l: List[A], z: B)(f: (B, A) => B): B = sys.error("todo")
 

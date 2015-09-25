@@ -39,4 +39,7 @@ object ListApp extends App {
   val unEx = List.appendElement( 0, List ( 1, 2, 3, 4 , 5, 6) )
   println( "unEx = " + unEx )
   println( "Length unEx = " + List.length( unEx ) )
+
+  val otroEx = List.firstN( List ( 1, 2, 3, 4 , 5, 6), 3 )
+  println( "otroEx = " + otroEx )
 }
