@@ -44,4 +44,6 @@ object ListApp extends App {
   println( "otroEx = " + otroEx )
 
   println( "ex3.6" + List.init( otroEx ))
+
+  println( "exercise 3.8 " + List.foldRight(List(1,2,3), Nil:List[Int])(Cons(_,_)) )
 }
