@@ -47,5 +47,7 @@ object ListApp extends App {
 
   println( "exercise 3.8 " + List.foldRight(List(1,2,3), Nil:List[Int])(Cons(_,_)) )
 
-  print( "Exercise 3.9: Length 1,2,3,4 = " + List.length( List( 1,2,3,4))+ "\n")
+  println( "Exercise 3.9: Length 1,2,3,4 = " + List.length( List( 1,2,3,4)) )
+
+  println( List.last( List (1,2,3,4 )) )
 }

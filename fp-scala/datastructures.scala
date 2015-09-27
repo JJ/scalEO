@@ -7,7 +7,9 @@ which may be `Nil` or another `Cons`.
  */
 case class Cons[+A](head: A, tail: List[A]) extends List[A]
 
+
 object List { // `List` companion object. Contains functions for creating and working with lists.
+
   def sum(ints: List[Int]): Int = ints match { // A function that uses pattern matching to add up a list of integers
     case Nil => 0 // The sum of the empty list is 0.
     case Cons(x,xs) => x + sum(xs) // The sum of a list starting with `x` is `x` plus the sum of the rest of the list.
@@ -34,7 +36,6 @@ object List { // `List` companion object. Contains functions for creating and wo
       case Nil => List(el)
       case Cons(h,t) => Cons(el, a2)
     }
-
 
   def foldRight[A,B](as: List[A], z: B)(f: (A, B) => B): B = // Utility functions
     as match {
@@ -64,8 +65,7 @@ object List { // `List` companion object. Contains functions for creating and wo
     case Nil => Nil
     case Cons( x, xs ) => 
       if ( n == 1 ) xs
-      else drop( xs, n-1 )
-      
+      else drop( xs, n-1 )    
   }
 
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] =  l match {
@@ -93,6 +93,12 @@ object List { // `List` companion object. Contains functions for creating and wo
   def init[A](l: List[A]): List[A]  = firstN( l, length(l)-1)
 
 
+  def last[A](l : List[A]): A = l match {
+    case Nil => sys.error( "No last item" )
+    case Cons(x, xs ) =>
+      if ( xs == Nil ) x
+      else last( xs )
+  }
 
   def foldLeft[A,B](l: List[A], z: B)(f: (B, A) => B): B = sys.error("todo")
 
