@@ -75,6 +75,7 @@ object List { // `List` companion object. Contains functions for creating and wo
       else Cons(x,xs)
   }
 
+
   def miLength[A](l: List[A]): Int = l match {
     case Nil => 0
     case Cons( x, xs ) => 1 + length(xs)
@@ -100,7 +101,13 @@ object List { // `List` companion object. Contains functions for creating and wo
       else last( xs )
   }
 
-  def foldLeft[A,B](l: List[A], z: B)(f: (B, A) => B): B = sys.error("todo")
+  def reverse[A]( l: List[A] ): List[A] = l match {
+    case Nil => Nil
+    case Cons( x, xs ) => append( reverse(xs), List(x ))
+  }
+
+  def foldLeft[A,B](l: List[A], z: B)(f: (A, B) => B): B = foldRight( reverse( l), z)( f )
+
 
   def map[A,B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }

@@ -50,4 +50,10 @@ object ListApp extends App {
   println( "Exercise 3.9: Length 1,2,3,4 = " + List.length( List( 1,2,3,4)) )
 
   println( List.last( List (1,2,3,4 )) )
+
+  val toReverse = List.append( List(1,2,3), List(4,5,6))
+  println( "Reverse " + List.reverse( toReverse ))
+
+  println( "Exercise 3.10: " + List.foldLeft( toReverse, 0 )( _ + _ ) )
+
 }
