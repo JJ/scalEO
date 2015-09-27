@@ -43,7 +43,9 @@ object ListApp extends App {
   val otroEx = List.firstN( List ( 1, 2, 3, 4 , 5, 6), 3 )
   println( "otroEx = " + otroEx )
 
-  println( "ex3.6" + List.init( otroEx ))
+  println( "ex3.6 " + List.init( otroEx ))
 
   println( "exercise 3.8 " + List.foldRight(List(1,2,3), Nil:List[Int])(Cons(_,_)) )
+
+  print( "Lengt 1,2,3,4 = " + List.length( List( 1,2,3,4))+ "\n")
 }
