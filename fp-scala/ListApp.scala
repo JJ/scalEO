@@ -56,4 +56,9 @@ object ListApp extends App {
 
   println( "Exercise 3.10: " + List.foldLeft( toReverse, 0 )( _ + _ ) )
 
+  println( "Exercise 3.11: " + List.sumLeft( toReverse )  + " length " + List.lengthL (toReverse) )
+
+  val doubleList = List( 1.0, 2.3, 3.4, 4.5 )
+  println( "Exercise 3.11: " + List.productLeft( doubleList ) )
+
 }

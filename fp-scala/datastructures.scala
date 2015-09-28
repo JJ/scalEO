@@ -108,6 +108,11 @@ object List { // `List` companion object. Contains functions for creating and wo
 
   def foldLeft[A,B](l: List[A], z: B)(f: (A, B) => B): B = foldRight( reverse( l), z)( f )
 
+  def sumLeft( l: List[Int] ): Int = foldLeft(l,0)(_ + _ )
+
+  def productLeft( l: List[Double] ): Double = foldLeft(l,1.0)(_ * _ )
+
+  def lengthL[A](l: List[A]): Int = foldLeft(l, 0)( (x: A, y: Int ) => y + 1 )
 
   def map[A,B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }
