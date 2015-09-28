@@ -119,5 +119,10 @@ object List { // `List` companion object. Contains functions for creating and wo
 
   def concat[A](lol: List[List[A]]): List[A] = foldRight( lol, List[A]() )( (xs: List[A], ys: List[A]) => append( xs, ys ))
 
+  def plus1( l: List[Int] ): List[Int] = l match {
+    case Nil => List[Int]()
+    case Cons( x, xs ) => Cons( x + 1, plus1(xs) )
+  }
+
   def map[A,B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }

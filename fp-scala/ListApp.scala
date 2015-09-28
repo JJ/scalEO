@@ -70,4 +70,6 @@ object ListApp extends App {
   val LoL = List( doubleList, List.reverse( doubleList))
   
   println( "Exercise 3.15 " + List.concat( LoL ) )
+
+  println( "Exercise 3.16 " + List.plus1( toReverse ))
 }
