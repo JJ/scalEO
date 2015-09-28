@@ -61,4 +61,6 @@ object ListApp extends App {
   val doubleList = List( 1.0, 2.3, 3.4, 4.5 )
   println( "Exercise 3.11: " + List.productLeft( doubleList ) )
 
+  println( "Exercise 3.12 " + List.reverse( doubleList ) )
+
 }
