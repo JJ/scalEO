@@ -93,7 +93,6 @@ object List { // `List` companion object. Contains functions for creating and wo
   
   def init[A](l: List[A]): List[A]  = firstN( l, length(l)-1)
 
-
   def last[A](l : List[A]): A = l match {
     case Nil => sys.error( "No last item" )
     case Cons(x, xs ) =>
