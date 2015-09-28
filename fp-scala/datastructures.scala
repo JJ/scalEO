@@ -115,5 +115,7 @@ object List { // `List` companion object. Contains functions for creating and wo
 
   def reverseFold[A]( l: List[A] ): List[A] = foldLeft( l, List[A]() )( (x: A, xs: List[A]) => appendElement( x, xs ))
 
+  def appendF[A](a1: List[A], a2: List[A]): List[A] = foldLeft( a1, a2 )( (x: A, xs: List[A]) => appendElement( x, xs ))
+
   def map[A,B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }
