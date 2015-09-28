@@ -63,4 +63,6 @@ object ListApp extends App {
 
   println( "Exercise 3.12 " + List.reverse( doubleList ) )
 
+  println( "Exercise 3.12 bis " + List.reverseFold( doubleList))
+  
 }
