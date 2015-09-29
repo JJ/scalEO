@@ -150,5 +150,16 @@ object List { // `List` companion object. Contains functions for creating and wo
   def filterFM[A](as: List[A])(f: A => Boolean): List[A] = 
     flatMap(as)( ( a: A ) => if ( f(a)) List(a) else Nil )
 
+  def head[A](as: List[A]): A = as match {
+    case Nil =>  sys.error( "No first item" )
+    case Cons(x,xs) => x
+  }
+
+  def addLists(as: List[Int], bs: List[Int]): List[Int] = as match {
+    case Nil => bs
+    case Cons( x, xs ) => Cons( x+head(bs), addLists(xs, tail(bs)))
+  }
+    
+
 
 }
