@@ -72,4 +72,8 @@ object ListApp extends App {
   println( "Exercise 3.15 " + List.concat( LoL ) )
 
   println( "Exercise 3.16 " + List.plus1( toReverse ))
+
+  println( "Exercise 3.17 " + List.toString( doubleList ))
+
+  println( "Exercise 3.18 " + List.map( doubleList )( _ * 2 ) )
 }
