@@ -147,4 +147,8 @@ object List { // `List` companion object. Contains functions for creating and wo
       else filter( xs )(f)
   }
 
+  def filterFM[A](as: List[A])(f: A => Boolean): List[A] = 
+    flatMap(as)( ( a: A ) => if ( f(a)) List(a) else Nil )
+
+
 }
