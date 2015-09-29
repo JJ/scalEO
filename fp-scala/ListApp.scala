@@ -83,6 +83,9 @@ object ListApp extends App {
 
   println( "Exercise 3.21 " + List.filterFM( toReverse )( _ % 2 == 0 )) 
 
-  println( "Exercise 3.22 " + List.addLists( List(1,2,3), List(4,5,6) ) )
+  val l123 = List(1,2,3)
+  val l456 = List(4,5,6)
+  println( "Exercise 3.22 " + List.addLists( l123, l456 ) )
 
+  println( "Exercise 3.23 " + List.zipWith( l123,l456 )( _ * _ ) )
 }
