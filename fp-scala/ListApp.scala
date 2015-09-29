@@ -78,4 +78,6 @@ object ListApp extends App {
   println( "Exercise 3.18 " + List.map( doubleList )( _ * 2 ) )
 
   println( "Exercise 3.19 " + List.filter( toReverse )( _ % 2 == 0 )) 
+
+  println( "Exercise 3.20 " + List.flatMap(List(1,2,3))(i => List(i,i)) )
 }
