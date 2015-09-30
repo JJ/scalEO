@@ -165,7 +165,15 @@ object List { // `List` companion object. Contains functions for creating and wo
     case Cons( x, xs ) => Cons( f(x,head(bs)), zipWith(xs, tail(bs))(f) )
   }
     
-
+  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = sub match {
+    case Nil => true
+    case Cons( x, xs ) => 
+      val sameHead = dropWhile( sup, (a: A) => a != x )
+      if ( length(sameHead) > 0 )
+	hasSubsequence( tail( sameHead ), xs )
+      else
+	false 
+  } 
 
 }
 

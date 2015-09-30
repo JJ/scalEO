@@ -88,4 +88,10 @@ object ListApp extends App {
   println( "Exercise 3.22 " + List.addLists( l123, l456 ) )
 
   println( "Exercise 3.23 " + List.zipWith( l123,l456 )( _ * _ ) )
+
+  val l1to6 = List( 1,2,3,4,5,6)
+  val l2to4 = List( 2,3,4 )
+  val otraL = List( 5,3 )
+  println( "Exercise 3.24 " + List.hasSubsequence( l1to6, l2to4))
+  println( "Exercise 3.24 " + List.hasSubsequence( l1to6, otraL))
 }
