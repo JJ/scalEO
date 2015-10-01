@@ -12,6 +12,8 @@ object TreeApp extends App {
 
   println( "Exercise 3.26 " + Tree.maximum( example ) )
 
+  
+  val deepExample = Branch( Branch( Branch( Leaf(1), Branch(Leaf(2),Leaf(5))), Leaf(3)), Leaf(4))
   println( "Exercise 3.27 " + Tree.depth( example ) )
 
 }
