@@ -188,4 +188,14 @@ object Tree { // `Tree` companion object. Contains functions for creating and wo
     case Branch( l, r ) => size( l ) + size ( r )
   }
 
+  def maximum( t: Tree[Int] ): Int = t match {
+    case Leaf( a ) => a
+    case Branch( l, r ) => maximum( l ) max maximum( r )
+  }
+
+  def depth[A]( t: Tree[A] ): Int = t match {
+    case Leaf( a ) => 1
+    case Branch( l, r ) => depth( l ) max depth( r )
+  }
+
 }

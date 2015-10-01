@@ -10,4 +10,8 @@ object TreeApp extends App {
 
   println( "Exercise 3.25 " + Tree.size( example ) )
 
+  println( "Exercise 3.26 " + Tree.maximum( example ) )
+
+  println( "Exercise 3.27 " + Tree.depth( example ) )
+
 }
