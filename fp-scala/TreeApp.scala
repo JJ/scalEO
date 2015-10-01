@@ -18,4 +18,6 @@ object TreeApp extends App {
 
   println( "Exercise 3.28 " + Tree.map( deepExample )( _ * 2 ))
 
+  println( "Exercise 3.29 " + Tree.sizeF( deepExample ) )
+
 }
