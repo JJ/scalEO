@@ -14,6 +14,8 @@ object TreeApp extends App {
 
   
   val deepExample = Branch( Branch( Branch( Leaf(1), Branch(Leaf(2),Leaf(5))), Leaf(3)), Leaf(4))
-  println( "Exercise 3.27 " + Tree.depth( example ) )
+  println( "Exercise 3.27 " + Tree.depth( deepExample ) )
+
+  println( "Exercise 3.28 " + Tree.map( deepExample )( _ * 2 ))
 
 }
