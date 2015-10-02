@@ -20,4 +20,7 @@ object TreeApp extends App {
 
   println( "Exercise 3.29 " + Tree.sizeF( deepExample ) )
 
+  println( "Exercise 3.29 bis " + Tree.maximumF( deepExample ) )
+
+  println( "Exercise 3.29 ter " + Tree.depthF( deepExample ) )
 }

@@ -206,6 +206,9 @@ object Tree { // `Tree` companion object. Contains functions for creating and wo
 
   def sizeF[A]( t: Tree[A] ): Int = fold(t)( (a:A) => 1  )(_ + _)
 
+  def maximumF[A]( t: Tree[Int] ): Int = fold(t)( (a: Int) => a  )(_ max _)
+
+  def depthF[A]( t: Tree[A] ): Int = fold(t)( (a: A) => 1  )( (a: Int,b: Int) => (a+1) max (b+1))
 
   def map[A,B]( t: Tree[A] )(f: A => B): Tree[B] = t match {
     case Leaf( a ) => Leaf(f(a))
