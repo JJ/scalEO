@@ -1,4 +1,4 @@
-package org.geneura.Fitness
+package org.geneura
 
 trait Fitness{
   def fitness: Double
