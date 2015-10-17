@@ -1,5 +1,6 @@
 import org.geneura.algorithm.evolutionary.MaxOnes._
 import org.geneura.algorithm.evolutionary.RoyalRoad._
+import org.geneura.algorithm.evolutionary.HIFF._
 
 object TestingFitness extends App{
   val v1 =  Vector(true,false,true,true) 
@@ -9,5 +10,9 @@ object TestingFitness extends App{
   println( MaxOnes( v2 ) )
   println( MaxOnes( v3 ) )
   println( RoyalRoad( v3 ) )
+  println( HIFF(v3) )
+  println( HIFF(v1) )
+  val v4 = Vector(true,true,true,true,false,true,true,false,true,true,false,true,false,false,false,true)
+  println( HIFF(v4))
 }
 
