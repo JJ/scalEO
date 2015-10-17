@@ -14,7 +14,7 @@ object HIFF extends Function1[Vector[Boolean],Double] with Fitness[Vector[Boolea
     case Vector('-')|Vector('0')|Vector('1') => ev.head
     case Vector('0','0') => '0'
     case Vector('1','1') => '1'
-    case Vector(_,'1')|Vector(_,'0')| Vector('0',_)| Vector('1',_) => '_'
+    case Vector(_,'1')|Vector(_,'0')| Vector('0',_)| Vector('1',_) => '-'
     case _ => t(T(ev.take(ev.length/2)),T(ev.drop(ev.length/2)))
   }
 
