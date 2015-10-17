@@ -14,5 +14,7 @@ object TestingFitness extends App{
   println( HIFF(v1) )
   val v4 = Vector(true,true,true,true,false,true,true,false,true,true,false,true,false,false,false,true)
   println( HIFF(v4))
+  val v5 = Vector(true,true,false,false)
+  println( HIFF(v5))
 }
 
