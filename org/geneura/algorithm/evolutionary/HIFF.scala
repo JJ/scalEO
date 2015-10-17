@@ -10,23 +10,26 @@ object HIFF extends Function1[Vector[Boolean],Double] with Fitness[Vector[Boolea
     case (_,_) => '-'
   }
 
-  def T( ev: Vector[Char] ): Char =  {
-    if (ev.length == 1 )
-      ev.head
-    else
-      t(T(ev.take(ev.length/2)),T(ev.drop(ev.length/2)))
+  def T( ev: Vector[Char] ): Char = ev match {
+    case Vector('-')|Vector('0')|Vector('1') => ev.head
+    case Vector('0','0') => '0'
+    case Vector('1','1') => '1'
+    case Vector(_,'1')|Vector(_,'0')| Vector('0',_)| Vector('1',_) => '_'
+    case _ => t(T(ev.take(ev.length/2)),T(ev.drop(ev.length/2)))
   }
 
   def f( a: Char ): Double = a match {
-    case '0' => 1
-    case '1' => 1
+    case '0'|'1' => 1
     case _ => 0
   }
 
-  def charFitness( ev: Vector[Char]):Double = 
-    if ( ev.length > 1 ) {
+  def charFitness( ev: Vector[Char]):Double = ev match {
+    case Vector('0')|Vector('1') => 1
+    case Vector('0','0')|Vector('1','1') => 4
+    case Vector('0','1')|Vector('1','0') => 2
+    case _ =>
       ev.length * f(T(ev)) + charFitness(ev.take(ev.length/2)) + charFitness(ev.drop(ev.length/2))
-    } else 0
+  }
 
   def Fitness( ev: Vector[Boolean]):Double = {
     val char_ev = ev.map(  (a: Boolean) => if (a == true) '1' else '0' ) 
