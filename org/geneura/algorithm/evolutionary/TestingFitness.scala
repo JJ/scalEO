@@ -1,6 +1,8 @@
 import org.geneura.algorithm.evolutionary.MaxOnes._
 import org.geneura.algorithm.evolutionary.RoyalRoad._
 import org.geneura.algorithm.evolutionary.HIFF._
+import org.geneura.algorithm.evolutionary.BinaryChromosome._
+import org.geneura.algorithm.evolutionary.BinaryChromosome._
 
 object TestingFitness extends App{
   val v1 =  Vector(true,false,true,true) 
@@ -16,5 +18,7 @@ object TestingFitness extends App{
   println( HIFF(v4))
   val v5 = Vector(true,true,false,false)
   println( HIFF(v5))
+  val eo = new BinaryChromosome( v4, HIFF(v4))
+  println( eo )
 }
 
