@@ -14,6 +14,11 @@ class BinaryChromosome( val data: Vector[Boolean],
     this( data, f( data ))
   }
 
+  // Random ctor
+  def this( len: Int,  f: Vector[Boolean] => Double ) {
+    this( Vector.fill( len )( if (scala.util.Random.nextDouble > 0.5 ) true else false), f )
+  }
+
   // Convert to String for printing
   override def toString: String = data.toString() + ": " + fitness
 }
