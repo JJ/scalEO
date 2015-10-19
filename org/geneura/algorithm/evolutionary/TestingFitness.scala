@@ -20,5 +20,7 @@ object TestingFitness extends App{
   println( HIFF(v5))
   val eo = new BinaryChromosome( v4, HIFF(v4))
   println( eo )
+  val eo2 = new BinaryChromosome( v5, HIFF )
+  println( eo2 )
 }
 
