@@ -6,5 +6,5 @@ class BinaryChromosome( val data: Vector[Boolean],
   val f: Double) extends EO[Vector[Boolean],Double] {
   def dataObject: Vector[Boolean] = data
   def fitness: Double = f
-
+  override def toString: String = data.toString() + ": " + fitness
 }
