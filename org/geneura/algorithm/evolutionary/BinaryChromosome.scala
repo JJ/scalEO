@@ -4,7 +4,7 @@ import org.geneura.algorithm.evolutionary.EO._
 
 // A classic BinaryChromosome with fitness
 // fitness can be ser after birth
-class BinaryChromosome( val data: Vector[Boolean],
+case class BinaryChromosome( val data: Vector[Boolean],
   var fValue: Double) extends EO[Vector[Boolean],Double] {
   def dataObject: Vector[Boolean] = data
   def fitness: Double = fValue
