@@ -26,5 +26,11 @@ object TestingFitness extends App{
   println( eo3 )
   val v6 = BinaryMutate( v4 )
   val eo5 = new BinaryChromosome( v6, HIFF )
+  val v7 = Vector.fill( 16 )( if (scala.util.Random.nextDouble > 0.5 ) true else false)
+  val v8 = Vector.fill( 16 )( if (scala.util.Random.nextDouble > 0.5 ) true else false)
+
+  val (v9,v10) = CrossOver(v7,v8)
+  println( "CrossOver" + v7 )
+  println( v8 )
 }
 
