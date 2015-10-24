@@ -10,12 +10,11 @@ trait Op2[A] {
 
 
 object Ops {
+
   def BinaryMutate( eo : IndexedSeq[Boolean]  ) : IndexedSeq[Boolean]  = {
     val point = (eo.length * scala.util.Random.nextDouble).toInt
     eo.take( point - 1 ) ++ eo.slice( point-1,point ).map(!_) ++ eo.drop( point )
-  }
-  
-  
+  }  
   
   def CrossOver [A](  oneEO : IndexedSeq[A], anotherEO : IndexedSeq[A]  ): (IndexedSeq[A],IndexedSeq[A]) = {
     var point1 = (oneEO.length * scala.util.Random.nextDouble).toInt
