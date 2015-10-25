@@ -3,6 +3,7 @@ import org.geneura.algorithm.evolutionary.RoyalRoad._
 import org.geneura.algorithm.evolutionary.HIFF._
 import org.geneura.algorithm.evolutionary.BinaryChromosome._
 import org.geneura.algorithm.evolutionary.Ops._
+import org.geneura.algorithm.evolutionary.Mutate._
 
 object TestingFitness extends App{
   val v1 =  Vector(true,false,true,true) 
@@ -24,7 +25,7 @@ object TestingFitness extends App{
   println( eo2 )
   val eo3 = new BinaryChromosome( 32, MaxOnes )
   println( eo3 )
-  val v6 = Ops.BinaryMutate( v4 )
+  val v6 = Mutate( v4 )
   val eo5 = new BinaryChromosome( v6.asInstanceOf[Vector[Boolean]], HIFF )
   val v7 = Vector.fill( 16 )( if (scala.util.Random.nextDouble > 0.5 ) true else false)
   val v8 = Vector.fill( 16 )( if (scala.util.Random.nextDouble > 0.5 ) true else false)
@@ -32,5 +33,7 @@ object TestingFitness extends App{
   val (v9,v10) = Ops.CrossOver(v7,v8)
   println( "CrossOver" + v7 )
   println( v8 )
+  val v11 = "101010101010101010"
+  println( Mutate( v11 ))
 }
 
