@@ -1,14 +1,13 @@
-package org.geneura.algorithm.evolutionary.Mutate
+package org.geneura.algorithm.evolutionary.Ops1
 
-trait MutateLike[+T,-Y] {
-  def apply[U >: T, Y](eo: U): Y
-
+def Mutate( eo : IndexedSeq[Boolean] ): IndexedSeq[Boolean] = {
+  val point = (eo.length * scala.util.Random.nextDouble).toInt
+  eo.take( point ) ++ eo.slice( point,point+1 ).map(!_) ++ eo.drop( point +1 )
 }
 
-case object Mutate extends MutateLike[IndexedSeq[Boolean],IndexedSeq[Boolean]]{
-  def apply[U >: IndexedSeq[Boolean],IndexedSeq[Boolean]]( eo : U ): IndexedSeq[Boolean] = {
-    val point = (eo.length * scala.util.Random.nextDouble).toInt
-    eo.take( point - 1 ) ++ eo.slice( point-1,point ).map(!_) ++ eo.drop( point )
-  }  
+def Mutate( eo : String ): String = {
+  val point = (eo.length * scala.util.Random.nextDouble).toInt
+  eo.take( point ) ++ eo.slice( point,point+1 ).map( (a:Char) => if ( a == '0' ) '1' else '0') ++ eo.drop( point +1 )
 }
+
 
