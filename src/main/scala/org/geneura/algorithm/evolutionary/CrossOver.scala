@@ -4,7 +4,7 @@ import scala.collection.IndexedSeqLike
 
 object CrossOver {
 
-  def apply[A](  oneEO : IndexedSeqLike[A,IndexedSeq[A]], anotherEO : IndexedSeqLike[A,IndexedSeq[A]]  ): (IndexedSeqLike[A,IndexedSeq[A]],IndexedSeqLike[A,IndexedSeq[A]]) = {
+  def apply[A](  oneEO : IndexedSeq[A], anotherEO : IndexedSeq[A]  ): (IndexedSeq[A],IndexedSeq[A]) = {
     var point1 = (oneEO.length * scala.util.Random.nextDouble).toInt
     var point2 = (oneEO.length * scala.util.Random.nextDouble).toInt
     if (point1 > point2) {
