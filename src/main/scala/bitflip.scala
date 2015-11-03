@@ -3,7 +3,7 @@ import org.geneura.algorithm.evolutionary.BinaryChromosome._
 import org.geneura.algorithm.evolutionary.MaxOnes._
 
 object bitflip extends App{
-  val iterations = 1000000
+  val iterations = 100000
   val top_length = 32768
   var len = 16
    do {
@@ -14,7 +14,7 @@ object bitflip extends App{
        val newIndi = Mutate( indi )
      }
      val finalTime = System.nanoTime()
-     println( "Scala, BitString, "+len+", "+(finalTime - initialTime)/1e9 )
+     println( "Scala-BitString, "+len+", "+(finalTime - initialTime)/1e9 )
      len = len * 2
    } while ( len <= top_length )
   
@@ -27,7 +27,7 @@ object bitflip extends App{
       val newIndi = Mutate( indi )
     }
     val finalTime = System.nanoTime()
-    println( "Scala, BitVector, "+len+", "+(finalTime - initialTime)/1e9 )
+    println( "Scala-BitVector, "+len+", "+(finalTime - initialTime)/1e9 )
     len = len * 2
   } while ( len <= top_length )
    
