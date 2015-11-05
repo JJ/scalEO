@@ -2,7 +2,7 @@ import org.geneura.algorithm.evolutionary.Mutate._
 import org.geneura.algorithm.evolutionary.BinaryChromosome._
 import org.geneura.algorithm.evolutionary.MaxOnes._
 
-object bitflip extends App{
+object onemax extends App{
   val iterations = 100000
   val top_length = 65536
   var len = 16
@@ -10,7 +10,7 @@ object bitflip extends App{
      val initialTime = System.nanoTime()
      var i = 0
      for ( i <- 1 until iterations ) {
-       val indi:String = scala.util.Random.alphanumeric.take(len).map((a: Char) => if (a > 'M' ) "1" else "0").mkString
+       val indi = Vector.fill( len )( if (scala.util.Random.nextDouble > 0.5 ) true else false)
        val fitness = MaxOnes( indi )
      }
      val finalTime = System.nanoTime()
