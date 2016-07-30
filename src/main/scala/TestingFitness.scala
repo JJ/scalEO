@@ -39,5 +39,6 @@ object TestingFitness extends App{
   val v13 = Mutate(v12)
   val (v15, v14 ) = CrossOver( v11, v13)
   println( "Crossover ", v15, " - ", v14 )
+  println( "String HIFF", HIFF(v11))
 }
 

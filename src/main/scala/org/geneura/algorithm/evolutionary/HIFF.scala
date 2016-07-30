@@ -2,6 +2,12 @@ package org.geneura.algorithm.evolutionary.HIFF
 
 import org.geneura.algorithm.evolutionary.Fitness._
 
+/** This function is Hierarchical If and only If.
+ *
+ * A "difficult" deceptive function for evolutionary algorithms
+ *
+ */
+
 object HIFF extends Function1[Vector[Boolean],Double] with Fitness[Vector[Boolean],Double] {
 
   def t( a: Char, b: Char ): Char = (a,b) match {
@@ -23,6 +29,7 @@ object HIFF extends Function1[Vector[Boolean],Double] with Fitness[Vector[Boolea
     case _ => 0
   }
 
+  /** this version works with character strings */
   def charFitness( ev: String):Double = ev match {
     case "0"|"1" => 1
     case "00"|"11" => 4
@@ -31,12 +38,15 @@ object HIFF extends Function1[Vector[Boolean],Double] with Fitness[Vector[Boolea
       ev.length * f(T(ev)) + charFitness(ev.take(ev.length/2)) + charFitness(ev.drop(ev.length/2))
   }
 
+  /** this version works with boolean vectors */
   def Fitness( ev: Vector[Boolean]):Double = {
     val char_ev = ev.mkString.replace("true","1").replace("false","0")
     charFitness(char_ev)
   }
     
   def apply(v1: Vector[Boolean]): Double = Fitness( v1 )
+
+  def apply(v1: String): Double = charFitness( v1 )
 
 }
 
