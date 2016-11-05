@@ -14,7 +14,7 @@ object onemax extends App{
        val fitness = MaxOnes( indi )
      }
      val finalTime = System.nanoTime()
-     println( "Scala-BitString, "+len+", "+(finalTime - initialTime)/1e9 )
+     println( "Scala-BitVector, "+len+", "+(finalTime - initialTime)/1e9 )
      len = len * 2
    } while ( len <= top_length )
      
